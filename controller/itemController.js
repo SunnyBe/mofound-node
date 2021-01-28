@@ -8,8 +8,8 @@ const { sanitizeBody } = require('express-validator/filter');
 const company = 'Mofound';
 const shareFacebook = require('share-facebook');
 const shareTwitter = require('share-twitter')
-const APP_ID1 = "408612589885188";
-const APP_ID = "108294790302517";
+const APP_ID1 = "";
+const APP_ID = "";
 const QUOTE_TO_SEND = 'I just reported my lost item on mofoundfyp.herokuapp.com, you might be the finder of this my item, you can also report it on mofound.com or contact 08031162141 to help me get my item back';
 
 var FoundItem = require('../model/found');
@@ -50,10 +50,8 @@ function generateCode(){
 
 function sendSMS(recipient, message) {
     require('dotenv').config()
-    const accountSid = 'AC1f1a346752ecfeaf0930399b3aee4745';
+    const accountSid = '';
     const authToken = process.env.TWILIO_TOKEN;
-    // const authToken = "158f52a6331fc41e5f6c1375705abb8b"
-    // const authToken = "158f52a6331fc41e5f6c1375705abb8b"
     const client = require('twilio')(accountSid, authToken);
 
     // For user's who start phone no with 0
